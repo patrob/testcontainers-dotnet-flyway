@@ -3,6 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "flyway", "flyway", "{57C0F0CB-9C63-467C-8DC9-209EF0136578}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{40531C0F-7604-4920-8CBA-67819401E1C2}"
+	ProjectSection(SolutionItems) = preProject
+		flyway\sql\V1.0__Initial.sql = flyway\sql\V1.0__Initial.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2688AF94-24D4-4523-B1A1-2B53B030B85B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{30CA65BA-B95F-44AF-9D03-DB5A25C6C10E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testcontainers.Flyway", "src\Testcontainers.Flyway\Testcontainers.Flyway.csproj", "{C26CE8BD-E44F-4432-AE88-A8359C93A267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testcontainers.Flyway.Tests", "tests\Testcontainers.Flyway.Tests\Testcontainers.Flyway.Tests.csproj", "{D3423E32-82F1-4F0E-97DB-9139689378A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +25,20 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40531C0F-7604-4920-8CBA-67819401E1C2} = {57C0F0CB-9C63-467C-8DC9-209EF0136578}
+		{C26CE8BD-E44F-4432-AE88-A8359C93A267} = {2688AF94-24D4-4523-B1A1-2B53B030B85B}
+		{D3423E32-82F1-4F0E-97DB-9139689378A0} = {30CA65BA-B95F-44AF-9D03-DB5A25C6C10E}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C26CE8BD-E44F-4432-AE88-A8359C93A267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26CE8BD-E44F-4432-AE88-A8359C93A267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26CE8BD-E44F-4432-AE88-A8359C93A267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26CE8BD-E44F-4432-AE88-A8359C93A267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3423E32-82F1-4F0E-97DB-9139689378A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3423E32-82F1-4F0E-97DB-9139689378A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3423E32-82F1-4F0E-97DB-9139689378A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3423E32-82F1-4F0E-97DB-9139689378A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
