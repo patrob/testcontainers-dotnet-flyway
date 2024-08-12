@@ -5,7 +5,8 @@ on:
     types: [published]
 
 jobs:
-  build:
+  release:
+    name: Release NuGet Package
 
     runs-on: ubuntu-latest
 
