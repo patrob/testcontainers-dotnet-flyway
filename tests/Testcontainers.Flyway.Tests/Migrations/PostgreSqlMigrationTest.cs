@@ -7,14 +7,14 @@ namespace Testcontainers.Flyway.Tests.Migrations;
 
 public class PostgreSqlMigrationTest : IAsyncLifetime
 {
-    private const string FlywayDirectory = "../../../../../flyway/sql";
+    private const string FlywayDirectory = "../../../../../flyway/postgresql";
     private readonly INetwork _network;
     private readonly PostgreSqlContainer _postgreSqlContainer;
+    private FlywayContainer _flywayContainer = null!;
 
     public PostgreSqlMigrationTest()
     {
         _network = new NetworkBuilder()
-            .WithName("test-network")
             .Build();
         _postgreSqlContainer = new PostgreSqlBuilder()
             .WithNetwork(_network)
@@ -29,13 +29,14 @@ public class PostgreSqlMigrationTest : IAsyncLifetime
     public async Task DisposeAsync()
     {
         await _postgreSqlContainer.DisposeAsync();
+        await _flywayContainer.DisposeAsync();
         await _network.DisposeAsync();
     }
 
     [Fact]
     public async Task ShouldMigratePostgreSqlDb()
     {
-        var flywayContainer = new FlywayBuilder()
+        _flywayContainer = new FlywayBuilder()
             .WithNetwork(_network)
             .DependsOn(_postgreSqlContainer)
             .WithResourceMapping(FlywayDirectory, "/flyway/sql")
@@ -45,8 +46,8 @@ public class PostgreSqlMigrationTest : IAsyncLifetime
             .WithJdbcUrl($"jdbc:postgresql://{_postgreSqlContainer.Name.TrimStart('/')}:5432/postgres")
             .Build();
 
-        await flywayContainer.StartAsync();
-        var exitCode = await flywayContainer.GetExitCodeAsync();
+        await _flywayContainer.StartAsync();
+        var exitCode = await _flywayContainer.GetExitCodeAsync();
         exitCode.Should().Be(0);
 
         var execResult = await _postgreSqlContainer.ExecScriptAsync("SELECT COUNT(Id) FROM Testing");
