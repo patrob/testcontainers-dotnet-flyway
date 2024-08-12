@@ -26,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71C2538F-4887-496D-B2CA-458FB6842EF0}"
 	ProjectSection(SolutionItems) = preProject
 		makefile = makefile
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{4DACF2C4-D5B2-4BB7-AC36-9D3FA3BF58A0}"
