@@ -28,6 +28,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		makefile = makefile
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{4DACF2C4-D5B2-4BB7-AC36-9D3FA3BF58A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{DA7D97FD-1063-49D0-ACB6-D6C2AF9877A6}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		.github\workflows\release.yml = .github\workflows\release.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +49,7 @@ Global
 		{C26CE8BD-E44F-4432-AE88-A8359C93A267} = {2688AF94-24D4-4523-B1A1-2B53B030B85B}
 		{D3423E32-82F1-4F0E-97DB-9139689378A0} = {30CA65BA-B95F-44AF-9D03-DB5A25C6C10E}
 		{E7336A22-34E2-433B-8C76-7FE013FDBD95} = {57C0F0CB-9C63-467C-8DC9-209EF0136578}
+		{DA7D97FD-1063-49D0-ACB6-D6C2AF9877A6} = {4DACF2C4-D5B2-4BB7-AC36-9D3FA3BF58A0}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C26CE8BD-E44F-4432-AE88-A8359C93A267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
